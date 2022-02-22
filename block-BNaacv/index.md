@@ -9,7 +9,7 @@ Q. create an express app named `user-diary` from scratch
 - handle the following routes inside users router:
   - list users
   - get single user details
-  - new user form
+  - new user fo
   - delete user
   - update user
 
