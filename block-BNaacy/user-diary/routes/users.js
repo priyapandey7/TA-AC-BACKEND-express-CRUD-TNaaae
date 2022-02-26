@@ -1,20 +1,20 @@
 var express = require('express');
-const user = require('../models/user');
-var router = express.router();
-var users= require('../models/user')
+var router = express.Router();
+var User = require('../models/user')
 
 router.get('/',(req,res) => {
     //handle action
     res.render('users.ejs')
-})
+});
+
 router.get('/new',(req,res) => {
-    //render the capture form
+    //render the create form
     res.render('userForm.ejs')
 })
 router.post('/:id',(req,res) => {
-    // capture the forn data
-    user.create(req.body,(err,user) => {
-        if (err) return res.send(err)
+    // capture the form data
+    User.create(req.body,(err, user) => {
+        if(err) return res.send(err);
         res.send(user)
     })
 })
